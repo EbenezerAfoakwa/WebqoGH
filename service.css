@@ -1,0 +1,2310 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #40514e;
+    width: 100%;
+  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  }
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+h1{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 70px; 
+    letter-spacing: 1.5px;
+    color: #40514e;
+  }
+  h2{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 35px; 
+    letter-spacing: 0px;
+    color: #40514e;
+  }
+  h3{
+    font-size: 27px; 
+    letter-spacing: 2px;
+    color: #40514e;
+  }
+  h4{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 24px; 
+    letter-spacing: 2px;
+    color: #40514e;
+  }
+  h5{
+    font-size: 18px; 
+    letter-spacing: 2px;
+    color: #fff;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+
+:root {
+  font-size: 14px;
+}
+
+html {
+  font-size: 100%;
+  font-family: sans-serif;
+}
+
+.menu-button {
+  width: 1.5rem;
+  position: relative;
+  /* top: 2rem;
+  right: 2rem; */
+  cursor: pointer;
+  height: calc(0.25rem * 5);
+  z-index: 666;
+  margin-top: 20.8px;
+  margin-right: 5px;
+  display: flex;
+}
+
+.menu-button span {
+  width: 1.5rem;
+  height: 3px;
+  background-color: #f56f5e;
+  display: block;
+  position: absolute;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
+
+.menu-button span:nth-of-type(2) {
+  top: calc(0.25rem * 2);
+}
+
+.menu-button span:nth-of-type(3) {
+  top: calc(0.25rem * 4);
+}
+
+.menu-button.active span {
+    background-color: #f56f5e;
+}
+
+.menu-button.active span:nth-of-type(1) {
+  -webkit-transform: translateY(0.5rem) rotate(-45deg);
+          transform: translateY(0.5rem) rotate(-45deg);
+}
+
+.menu-button.active span:nth-of-type(2) {
+  -webkit-transform: translateX(1.5rem);
+          transform: translateX(1.5rem);
+  opacity: 0;
+}
+
+.menu-button.active span:nth-of-type(3) {
+  -webkit-transform: translateY(-0.5rem) rotate(45deg);
+          transform: translateY(-0.5rem) rotate(45deg);
+}
+
+.menu-overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  background-color: #2F3A8F;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 4fr 4fr;
+      grid-template-columns: 4fr 4fr;
+  color: white;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 1s ease-in-out;
+  z-index: 100;
+}
+
+.menu-overlay.open {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.menu-overlay.open .menu-overlay__image img {
+  -webkit-animation: fadeIn 0.8s ease-in-out 0s forwards;
+          animation: fadeIn 0.8s ease-in-out 0s forwards;
+}
+
+.menu-overlay.open .nav {
+  -webkit-animation: fadeIn 0.8s ease-in-out 0s forwards;
+          animation: fadeIn 0.8s ease-in-out 0s forwards;
+}
+
+.menu-overlay__image img {
+  width: 100%;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0;
+}
+
+.nav {
+  opacity: 0;
+}
+
+#overlay-list{
+    margin-top: 100px;
+}
+
+.nav__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.nav__items:not(:first-child) {
+    margin-top: 4rem;
+}
+
+.nav__category {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Ubuntu', sans-serif;
+  color: #d5aea7;
+}
+
+.nav__item {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  font-size: 16px;
+}
+
+.nav__item::before {
+  content: "";
+  height: 1px;
+  width: 0;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav__item:hover {
+  padding-left: calc(2rem + 1rem);
+  color: #d5aea7;
+}
+
+.nav__item:hover::before {
+  width: 2rem;
+}
+
+.intro {
+  font-size: 1.5rem;
+  font-style: italic;
+  line-height: 1.45;
+  max-width: 550px;
+  margin: 8rem auto 4rem auto;
+}
+
+.copy {
+  max-width: 550px;
+  margin: 0 auto;
+  line-height: 1.75;
+  padding-bottom: 4rem;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.work-link {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.5rem;
+  text-decoration: none;
+  color: black;
+  z-index: 7777;
+}
+/*# sourceMappingURL=index.css.map */
+
+
+
+
+
+
+
+
+
+
+
+
+#navbar {
+    background-color: #fff; /* Black background color */
+    position: fixed; /* Make it stick/fixed */
+    top: 0; /* Stay on top */
+    width: 100%; /* Full width */
+    transition: top 0.3s; /* Transition effect when sliding down (and up) */
+    z-index: 1000;
+  }
+  
+  /* Style the navbar links */
+  #navbar a {
+    float: left;
+    display: block;
+    color: #40514e;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+  }
+  
+  #navbar a:hover {
+    color: #f56f5e;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+/* BUTTON-48 */
+.button-48 {
+    appearance: none;
+    background-color: #f5705e39;
+    border-width: 0;
+    box-sizing: border-box;
+    color: #40514e;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Clarkson,Helvetica,sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1em;
+    opacity: 1;
+    outline: 0;
+    padding: 1em 2.2em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-rendering: geometricprecision;
+    text-transform: uppercase;
+    transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),background-color 100ms cubic-bezier(.694, 0, 0.335, 1),color 100ms cubic-bezier(.694, 0, 0.335, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    white-space: nowrap;
+    border-radius: 2px;
+  }
+  
+  .button-48:before {
+    animation: opacityFallbackOut .5s step-end forwards;
+    backface-visibility: hidden;
+    background: #2f3a8fd8;
+    clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: translateZ(0);
+    transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
+    width: 100%;
+    color: #fff;
+  }
+  .button-48:hover {
+    color: #fff;
+  }
+  
+  .button-48:hover:before {
+    animation: opacityFallbackIn 0s step-start forwards;
+    clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+    border-radius: 2px;
+    color: #fff;
+  }
+  
+  .button-48:after {
+    background-color: #FFFFFF;
+    color: #fff;
+  }
+  
+  .button-48 span {
+    z-index: 1;
+    position: relative;
+  }
+  /* BUTTON-48 */
+  
+
+
+
+
+
+
+
+
+
+
+
+  /* .paragraph2 .moving-arrow:after {
+    position: absolute;
+    transform:translateX(0) translateY(0);
+    transition:transform 0.2s ease-in-out;
+    content:"→";
+  }
+  
+  .paragraph2 .moving-arrow:hover:after {
+    transform:translateX(10px);
+  } */
+
+
+
+
+
+
+
+
+
+
+  .title{
+    margin:auto;
+    font-size: 13px;
+    font-family: Raleway, sans-serif;
+  
+  }
+      @media (min-width: 450px) {
+        .main-card {
+          width: 96%;
+          max-width: 300px;
+          height: calc(50% - 32px) !important;
+          border-radius: 0px !important;
+          max-height: 600px;
+        margin: 40px 16px!important;
+        }
+      }
+  
+      .collapsed {
+        width: 55px !important;
+        height: 55px !important;
+        border-radius: 2px !important;
+        margin: 0px 20px 40px!important;
+       
+      }
+  
+      .main-card {
+        background: white;
+        color: white;
+        width: 80%;
+        height: 50%;
+        margin: 0px;
+        border-radius: 0px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        transition: all 0.5s;
+        box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2),0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+  #chatbot_toggle {
+    position: absolute;
+    right: 0;
+    border: none;
+    height: 48px;
+    width: 48px;
+    background: #2F3A8F;
+    padding: 14px;
+    color:white;
+  }
+  #chatbot_toggle:hover {
+    background: #2F3A8F;
+  }
+  .main-card .line {
+    height: 1px;
+    background-color: #2F3A8F;
+    width: 100%;
+    opacity: 0.2;
+  }
+  .main-title {
+    background-color: #2F3A8F;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    height: 48px;
+  }
+  .main-title>div{
+    height:48px;
+    width:48px;
+    display:flex;
+    margin-left:8px;
+  }
+  .main-title svg {
+    height: 24px;
+    margin: auto;
+  }
+  .main-title > span {
+    margin: auto auto auto 8px;
+  }
+  .chat-area {
+    flex-grow: 1;
+    overflow: auto;
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+  .input-message {
+    padding: 8px 48px 8px 16px;
+    flex-grow: 1;
+    border: none;
+  }
+  .input-message:focus {
+    outline: none;
+  }
+  .input-div {
+    height: 48px;
+    display: flex;
+  }
+  
+  .input-send {
+    background: transparent;
+    width: 48px;
+    height: 48px;
+    right: 0%;
+    border: none;
+    cursor: pointer;
+  }
+  .input-send:hover {
+    background: lavender;
+  }
+  .input-send svg {
+    fill: #2F3A8F;
+    margin: 11px 8px;
+  }
+  .chat-message-div {
+    display: flex;
+  }
+  
+  .chat-message-sent {
+    background-color: white;
+    margin: 8px 16px 8px 64px;
+    padding: 8px 16px;
+    animation-name: fadeIn;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 100ms;
+    color: #40514e;
+    border-radius: 8px 8px 2px 8px;
+    background-color: lavender;
+  }
+  
+  .chat-message-received {
+    background-color: white;
+    margin: 8px 64px 8px 16px;
+    padding: 8px 16px;
+    animation-name: fadeIn;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 100ms;
+    color: black;
+    border-radius: 8px 8px 8px 2px;
+    background-color: lavender;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+  /* ZOOM IN PICTURE */
+  @import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+  .zoomWrapper {
+  
+    max-width: 100%;
+    overflow: hidden;
+    margin: 0 auto 20px auto;
+    /* -- Prevent flicker -- */
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .zoomWrapper img {
+    max-width: 100%;
+    height: auto;
+    max-height: 79%;
+    display: block;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+  }
+  
+  .zoomWrapper img:hover {
+    -webkit-transform: scale(1.25);
+    -moz-transform: scale(1.25);
+    -ms-transform: scale(1.25);
+    -o-transform: scale(1.25);
+    transform: scale(1.25);
+  }
+  
+  @keyframes flash {
+    0% {
+      opacity: 1;
+    }
+  
+    50% {
+      opacity: 0.5;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .flasher {
+    animation: flash 300ms infinite;
+  }
+  /* ZOOM IN PICTURE */
+
+  
+  
+
+
+
+
+
+
+
+
+
+  .site-footer hr
+{
+  border-top-color:#bbb;
+  opacity:0.5
+}
+.site-footer hr.small
+{
+  margin:20px 0
+}
+.site-footer h6
+{
+  color:#d5aea7;
+  font-size:16px;
+  text-transform:uppercase;
+  margin-top:5px;
+  letter-spacing:2px
+}
+.site-footer a
+{
+  color:#fff;
+}
+.site-footer a:hover
+{
+  color:#f56f5e;
+  text-decoration:none;
+}
+.footer-links
+{
+  padding-left:0;
+  list-style:none
+}
+.footer-links li
+{
+  display:block
+}
+.footer-links a
+{
+  color:#fff;
+}
+.footer-links a:active,.footer-links a:focus,.footer-links a:hover
+{
+  color:#f56f5e;
+  text-decoration:none;
+}
+.footer-links.inline li
+{
+  display:inline-block
+}
+.site-footer .social-icons
+{
+  text-align:right
+}
+.site-footer .social-icons a
+{
+  width:40px;
+  height:40px;
+  line-height:40px;
+  margin-left:6px;
+  margin-right:0;
+  border-radius:100%;
+  background-color:#fff
+}
+.copyright-text
+{
+  margin:0
+}
+@media (max-width:991px)
+{
+  .site-footer [class^=col-]
+  {
+    margin-bottom:30px
+  }
+}
+@media (max-width:767px)
+{
+  .site-footer
+  {
+    padding-bottom:0
+  }
+  .site-footer .copyright-text,.site-footer .social-icons
+  {
+    text-align:center
+  }
+}
+.social-icons
+{
+  padding-left:0;
+  margin-bottom:0;
+  list-style:none
+}
+.social-icons li
+{
+  display:inline-block;
+  margin-bottom:4px
+}
+.social-icons li.title
+{
+  margin-right:15px;
+  text-transform:uppercase;
+  color:#96a2b2;
+  font-weight:700;
+  font-size:13px
+}
+.social-icons a{
+  background-color:#eceeef;
+  color:#818a91;
+  font-size:16px;
+  display:inline-block;
+  line-height:44px;
+  width:44px;
+  height:44px;
+  text-align:center;
+  margin-right:8px;
+  border-radius:100%;
+  -webkit-transition:all .2s linear;
+  -o-transition:all .2s linear;
+  transition:all .2s linear
+}
+.social-icons a:active,.social-icons a:focus,.social-icons a:hover
+{
+  color:#fff;
+  background-color:#29aafe
+}
+.social-icons.size-sm a
+{
+  line-height:34px;
+  height:34px;
+  width:34px;
+  font-size:14px
+}
+.social-icons a.facebook:hover
+{
+  background-color:#3b5998
+}
+.social-icons a.twitter:hover
+{
+  background-color:#00aced
+}
+.social-icons a.linkedin:hover
+{
+  background-color:#007bb6
+}
+.social-icons a.dribbble:hover
+{
+  background-color:#ea4c89
+}
+@media (max-width:767px)
+{
+  .social-icons li.title
+  {
+    display:block;
+    margin-right:0;
+    font-weight:600
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* SCROLL BAR */
+/* width */
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(180, 180, 180);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(230, 228, 228);
+}
+
+/* SCROLL BAR */
+
+
+  
+
+
+
+
+
+
+
+
+@media screen and (min-width: 1500px){
+  #navbar .container .menu-button{
+    margin-left: 20px;
+  }
+  #navbar .container #navbar-right .phone{
+    display: block;
+  }
+  .menu-overlay .nav{
+    padding: 0px 10px; 
+  }
+  .menu-overlay .nav #overlay-list{
+    margin-top: 100px;
+  }
+  .menu-overlay .nav #overlay-list .nav__items p{
+    margin-top: -0px;
+  }
+  .menu-overlay .nav #overlay-list .nav__items #link{
+    display: block;
+  }
+
+  .section{
+    margin: 0px 60px;
+  }
+  .collapsed {
+    width: 55px !important;
+    height: 55px !important;
+    border-radius: 2px !important;
+    margin: 0px 60px 40px!important;
+  }
+
+  .heading{
+    background-color: #CCD1E4; 
+    padding: 170px 0px 100px
+  }
+  .heading .section h1{
+    font-size: 50px; 
+  }
+  .heading .section .button-48{
+    margin-top: 107px; 
+    margin-left: 150px;
+  }
+  .section .portfolio{
+    margin: 130px 80px 100px;
+  }
+  .section .portfolio #space{
+    padding: 10px 0px;
+  }
+
+  .voilet-page{
+    background-color: #2F3A8F; 
+    margin-top: 60px;
+    margin-bottom: -90px;
+  }
+  .voilet-page .section{
+    padding: 150px 50px;
+  }
+  .voilet-page .section h3{
+    color: #fff; 
+    padding-right: 120px; 
+    font-weight: 700;
+  }
+  .voilet-page .section h5{
+    color: #fff; 
+    font-weight: 700;
+  }
+
+  .section #contact{
+    padding: 10px 20px 0px; 
+  }
+  #contact-bg{
+    padding: 50px 80px; 
+    border: 10px solid #FEECE9; 
+    background-color: #fff;
+  }
+  #what-they-say .testimony{
+    padding: 0px 0px 0px 50px; 
+    text-align: justify;
+  }
+  #what-they-say .testimony .head p{
+    color: #f56f5e; 
+    font-size:13px; 
+    padding: 135px 0px 10px;
+  }
+  #what-they-say .testimony #message p{
+    line-height: 2; 
+    font-size: 16px;
+  }
+  #what-they-say .testimony h2{
+    padding: 0px 0px 40px
+  }
+
+  .site-footer{
+  background-color:#2F3A8F;
+  padding: 130px 0 100px;
+  font-size:15px;
+  line-height:24px;
+  color:#fff;
+  margin-top: -80px;
+}
+}
+  @media screen and (max-width: 1500px){
+    #navbar .container .menu-button{
+      margin-left: 20px;
+    }
+    #navbar .container #navbar-right .phone{
+      display: block;
+    }
+    .menu-overlay .nav{
+      padding: 0px 10px; 
+    }
+    .menu-overlay .nav #overlay-list{
+      margin-top: 100px;
+    }
+    .menu-overlay .nav #overlay-list .nav__items p{
+      margin-top: -0px;
+    }
+    .menu-overlay .nav #overlay-list .nav__items #link{
+      display: block;
+    }
+  
+    .section{
+      margin: 0px 60px;
+    }
+    .collapsed {
+      width: 55px !important;
+      height: 55px !important;
+      border-radius: 2px !important;
+      margin: 0px 60px 40px!important;
+    }
+
+    .heading{
+      background-color: #fff; 
+      padding: 150px 0px 128px
+    }
+    .heading .section h1{
+      font-size: 50px; 
+    }
+    .heading .section .button-48{
+      margin-top: 40px; 
+      margin-left: 140px;
+    }
+    .section .portfolio{
+      margin: 130px 80px 100px;
+    }
+    .section .portfolio #space{
+      padding: 10px 0px;
+    }
+  
+    .voilet-page{
+      background-color: #2F3A8F; 
+      margin-top: 60px;
+      margin-bottom: -90px;
+    }
+    .voilet-page .section{
+      padding: 150px 50px;
+    }
+    .voilet-page .section h3{
+      color: #fff; 
+      padding-right: 120px; 
+      font-weight: 700;
+    }
+    .voilet-page .section h5{
+      color: #fff; 
+      font-weight: 700;
+    }
+  
+    .section #contact{
+      padding: 10px 20px 0px; 
+    }
+    #contact-bg{
+      padding: 50px 80px; 
+      border: 10px solid #FEECE9; 
+      background-color: #fff;
+    }
+    #what-they-say .testimony{
+      padding: 0px 0px 0px 50px; 
+      text-align: justify;
+    }
+    #what-they-say .testimony .head p{
+      color: #f56f5e; 
+      font-size:13px; 
+      padding: 135px 0px 10px;
+    }
+    #what-they-say .testimony #message p{
+      line-height: 2; 
+      font-size: 16px;
+    }
+    #what-they-say .testimony h2{
+      padding: 0px 0px 40px
+    }
+  
+    .site-footer{
+    background-color:#2F3A8F;
+    padding: 130px 0 100px;
+    font-size:15px;
+    line-height:24px;
+    color:#fff;
+    margin-top: -80px;
+  }
+  }
+  @media screen and (max-width: 1400px){
+    #navbar .container .menu-button{
+      margin-left: 20px;
+    }
+    #navbar .container #navbar-right .phone{
+      display: block;
+    }
+    .menu-overlay .nav{
+      padding: 0px 10px; 
+    }
+    .menu-overlay .nav #overlay-list{
+      margin-top: 100px;
+    }
+    .menu-overlay .nav #overlay-list .nav__items p{
+      margin-top: -0px;
+    }
+    .menu-overlay .nav #overlay-list .nav__items #link{
+      display: block;
+    }
+  
+    .section{
+      margin: 0px 60px;
+    }
+    .collapsed {
+      width: 55px !important;
+      height: 55px !important;
+      border-radius: 2px !important;
+      margin: 0px 60px 40px!important;
+    }
+
+    .heading{
+      background-color: #CCD1E4; 
+      padding: 170px 0px 100px
+    }
+    .heading .section h1{
+      font-size: 50px; 
+    }
+    .heading .section .button-48{
+      margin-top: 107px; 
+      margin-left: 130px;
+    }
+    .section .portfolio{
+      margin: 130px 80px 100px;
+    }
+    .section .portfolio #space{
+      padding: 10px 0px;
+    }
+  
+    .voilet-page{
+      background-color: #2F3A8F; 
+      margin-top: 60px;
+      margin-bottom: -90px;
+    }
+    .voilet-page .section{
+      padding: 150px 50px;
+    }
+    .voilet-page .section h3{
+      color: #fff; 
+      padding-right: 120px; 
+      font-weight: 700;
+    }
+    .voilet-page .section h5{
+      color: #fff; 
+      font-weight: 700;
+    }
+  
+    .section #contact{
+      padding: 10px 20px 0px; 
+    }
+    #contact-bg{
+      padding: 50px 80px; 
+      border: 10px solid #FEECE9; 
+      background-color: #fff;
+    }
+    #what-they-say .testimony{
+      padding: 0px 0px 0px 50px; 
+      text-align: justify;
+    }
+    #what-they-say .testimony .head p{
+      color: #f56f5e; 
+      font-size:13px; 
+      padding: 135px 0px 10px;
+    }
+    #what-they-say .testimony #message p{
+      line-height: 2; 
+      font-size: 16px;
+    }
+    #what-they-say .testimony h2{
+      padding: 0px 0px 40px
+    }
+  
+    .site-footer{
+    background-color:#2F3A8F;
+    padding: 130px 0 100px;
+    font-size:15px;
+    line-height:24px;
+    color:#fff;
+    margin-top: -80px;
+  }
+  }
+  @media screen and (max-width: 1300px){
+    #navbar .container .menu-button{
+      margin-left: 20px;
+    }
+    #navbar .container #navbar-right .phone{
+      display: block;
+    }
+    .menu-overlay .nav{
+      padding: 0px 10px; 
+    }
+    .menu-overlay .nav #overlay-list{
+      margin-top: 100px;
+    }
+    .menu-overlay .nav #overlay-list .nav__items p{
+      margin-top: -0px;
+    }
+    .menu-overlay .nav #overlay-list .nav__items #link{
+      display: block;
+    }
+  
+    .section{
+      margin: 0px 60px;
+    }
+    .collapsed {
+      width: 55px !important;
+      height: 55px !important;
+      border-radius: 2px !important;
+      margin: 0px 60px 40px!important;
+    }
+
+    .heading{
+      background-color: #CCD1E4; 
+      padding: 170px 0px 100px
+    }
+    .heading .section h1{
+      font-size: 50px; 
+    }
+    .heading .section .button-48{
+      margin-top: 107px; 
+      margin-left: 110px;
+    }
+    .section .portfolio{
+      margin: 130px 80px 100px;
+    }
+    .section .portfolio #space{
+      padding: 10px 0px;
+    }
+  
+    .voilet-page{
+      background-color: #2F3A8F; 
+      margin-top: 60px;
+      margin-bottom: -90px;
+    }
+    .voilet-page .section{
+      padding: 150px 50px;
+    }
+    .voilet-page .section h3{
+      color: #fff; 
+      padding-right: 120px; 
+      font-weight: 700;
+    }
+    .voilet-page .section h5{
+      color: #fff; 
+      font-weight: 700;
+    }
+  
+    .section #contact{
+      padding: 10px 20px 0px; 
+    }
+    #contact-bg{
+      padding: 50px 80px; 
+      border: 10px solid #FEECE9; 
+      background-color: #fff;
+    }
+    #what-they-say .testimony{
+      padding: 0px 0px 0px 50px; 
+      text-align: justify;
+    }
+    #what-they-say .testimony .head p{
+      color: #f56f5e; 
+      font-size:13px; 
+      padding: 115px 0px 10px;
+    }
+    #what-they-say .testimony #message p{
+      line-height: 2; 
+      font-size: 16px;
+    }
+    #what-they-say .testimony h2{
+      padding: 0px 0px 40px
+    }
+  
+    .site-footer{
+    background-color:#2F3A8F;
+    padding: 130px 0 100px;
+    font-size:15px;
+    line-height:24px;
+    color:#fff;
+    margin-top: -80px;
+  }
+  }
+  @media screen and (max-width: 1200px){
+    #navbar .container .menu-button{
+      margin-left: 20px;
+    }
+    #navbar .container #navbar-right .phone{
+      display: block;
+    }
+    .menu-overlay .nav{
+      padding: 0px 10px; 
+    }
+    .menu-overlay .nav #overlay-list{
+      margin-top: 100px;
+    }
+    .menu-overlay .nav #overlay-list .nav__items p{
+      margin-top: -0px;
+    }
+    .menu-overlay .nav #overlay-list .nav__items #link{
+      display: block;
+    }
+  
+    .section{
+      margin: 0px 60px;
+    }
+    .collapsed {
+      width: 55px !important;
+      height: 55px !important;
+      border-radius: 2px !important;
+      margin: 0px 60px 40px!important;
+    }
+
+    .heading{
+      background-color: #CCD1E4; 
+      padding: 170px 0px 100px
+    }
+    .heading .section h1{
+      font-size: 50px; 
+    }
+    .heading .section .button-48{
+      margin-top: 107px; 
+      margin-left: 80px;
+    }
+    .section .portfolio{
+      margin: 130px 80px 100px;
+    }
+    .section .portfolio #space{
+      padding: 10px 0px;
+    }
+  
+    .voilet-page{
+      background-color: #2F3A8F; 
+      margin-top: 60px;
+      margin-bottom: -40px;
+    }
+    .voilet-page .section{
+      padding: 150px 50px;
+    }
+    .voilet-page .section h3{
+      color: #fff; 
+      padding-right: 120px; 
+      font-weight: 700;
+    }
+    .voilet-page .section h5{
+      color: #fff; 
+      font-weight: 700;
+    }
+  
+    .section #contact{
+      padding: 10px 20px 0px; 
+    }
+    #contact-bg{
+      padding: 50px 80px; 
+      border: 10px solid #FEECE9; 
+      background-color: #fff;
+    }
+    #what-they-say .testimony{
+      padding: 0px 0px 0px 50px; 
+      text-align: justify;
+    }
+    #what-they-say .testimony .head p{
+      color: #f56f5e; 
+      font-size:13px; 
+      padding: 85px 0px 10px;
+    }
+    #what-they-say .testimony #message p{
+      line-height: 2; 
+      font-size: 16px;
+    }
+    #what-they-say .testimony h2{
+      padding: 0px 0px 40px
+    }
+  
+    .site-footer{
+    background-color:#2F3A8F;
+    padding: 130px 0 100px;
+    font-size:15px;
+    line-height:24px;
+    color:#fff;
+    margin-top: -30px;
+  }
+  }
+  @media screen and (max-width: 1100px){
+    #navbar .container .menu-button{
+      margin-left: 20px;
+    }
+    #navbar .container #navbar-right .phone{
+      display: block;
+    }
+    .menu-overlay .nav{
+      padding: 0px 10px; 
+    }
+    .menu-overlay .nav #overlay-list{
+      margin-top: 100px;
+    }
+    .menu-overlay .nav #overlay-list .nav__items p{
+      margin-top: -0px;
+    }
+    .menu-overlay .nav #overlay-list .nav__items #link{
+      display: block;
+    }
+  
+    .section{
+      margin: 0px 60px;
+    }
+    .collapsed {
+      width: 55px !important;
+      height: 55px !important;
+      border-radius: 2px !important;
+      margin: 0px 60px 40px!important;
+    }
+
+    .heading{
+      background-color: #CCD1E4; 
+      padding: 170px 0px 100px
+    }
+    .heading .section h1{
+      font-size: 50px; 
+    }
+    .heading .section .button-48{
+      margin-top: 107px; 
+      margin-left: 60px;
+    }
+    .section .portfolio{
+      margin: 130px 80px 100px;
+    }
+    .section .portfolio #space{
+      padding: 10px 0px;
+    }
+  
+    .voilet-page{
+      background-color: #2F3A8F; 
+      margin-top: 60px;
+      margin-bottom: -40px;
+    }
+    .voilet-page .section{
+      padding: 150px 50px;
+    }
+    .voilet-page .section h3{
+      color: #fff; 
+      padding-right: 120px; 
+      font-weight: 700;
+    }
+    .voilet-page .section h5{
+      color: #fff; 
+      font-weight: 700;
+    }
+  
+    .section #contact{
+      padding: 10px 20px 0px; 
+    }
+    #contact-bg{
+      padding: 50px 80px; 
+      border: 10px solid #FEECE9; 
+      background-color: #fff;
+    }
+    #what-they-say .testimony{
+      padding: 0px 0px 0px 50px; 
+      text-align: justify;
+    }
+    #what-they-say .testimony .head p{
+      color: #f56f5e; 
+      font-size:13px; 
+      padding: 85px 0px 10px;
+    }
+    #what-they-say .testimony #message p{
+      line-height: 2; 
+      font-size: 16px;
+    }
+    #what-they-say .testimony h2{
+      padding: 0px 0px 40px
+    }
+  
+    .site-footer{
+    background-color:#2F3A8F;
+    padding: 130px 0 100px;
+    font-size:15px;
+    line-height:24px;
+    color:#fff;
+    margin-top: -30px;
+  }
+  }
+  @media screen and (max-width: 1000px){
+    #navbar .container .menu-button{
+      margin-left: 20px;
+    }
+    #navbar .container #navbar-right .phone{
+      display: block;
+    }
+    .menu-overlay .nav{
+      padding: 0px 10px; 
+    }
+    .menu-overlay .nav #overlay-list{
+      margin-top: 100px;
+    }
+    .menu-overlay .nav #overlay-list .nav__items p{
+      margin-top: -0px;
+    }
+    .menu-overlay .nav #overlay-list .nav__items #link{
+      display: block;
+    }
+  
+    .section{
+      margin: 0px 60px;
+    }
+    .collapsed {
+      width: 55px !important;
+      height: 55px !important;
+      border-radius: 2px !important;
+      margin: 0px 60px 40px!important;
+    }
+
+    .heading{
+      background-color: #CCD1E4; 
+      padding: 170px 0px 100px
+    }
+    .heading .section h1{
+      font-size: 50px; 
+    }
+    .heading .section .button-48{
+      margin-top: 170px; 
+      margin-left: 40px;
+    }
+    .section .portfolio{
+      margin: 130px 80px 100px;
+    }
+    .section .portfolio #space{
+      padding: 10px 0px;
+    }
+  
+    .voilet-page{
+      background-color: #2F3A8F; 
+      margin-top: 60px;
+      margin-bottom: -40px;
+    }
+    .voilet-page .section{
+      padding: 150px 50px;
+    }
+    .voilet-page .section h3{
+      color: #fff; 
+      padding-right: 120px; 
+      font-weight: 700;
+    }
+    .voilet-page .section h5{
+      color: #fff; 
+      font-weight: 700;
+    }
+  
+    .section #contact{
+      padding: 10px 20px 0px; 
+    }
+    #contact-bg{
+      padding: 50px 80px; 
+      border: 10px solid #FEECE9; 
+      background-color: #fff;
+    }
+    #what-they-say .testimony{
+      padding: 0px 0px 0px 50px; 
+      text-align: justify;
+    }
+    #what-they-say .testimony .head p{
+      color: #f56f5e; 
+      font-size:13px; 
+      padding: 70px 0px 10px;
+    }
+    #what-they-say .testimony #message p{
+      line-height: 2; 
+      font-size: 16px;
+    }
+    #what-they-say .testimony h2{
+      padding: 0px 0px 40px
+    }
+  
+    .site-footer{
+    background-color:#2F3A8F;
+    padding: 130px 0 100px;
+    font-size:15px;
+    line-height:24px;
+    color:#fff;
+    margin-top: -30px;
+  }
+  }
+  @media screen and (max-width: 900px){
+    #navbar .container .menu-button{
+      margin-left: 20px;
+    }
+    #navbar .container #navbar-right .phone{
+      display: block;
+    }
+    .menu-overlay .nav{
+      padding: 0px 10px; 
+    }
+    .menu-overlay .nav #overlay-list{
+      margin-top: 150px;
+    }
+    .menu-overlay .nav #overlay-list .nav__items p{
+      margin-top: -0px;
+    }
+    .menu-overlay .nav #overlay-list .nav__items #link{
+      display: block;
+    }
+  
+    .section{
+      margin: 0px 40px;
+    }
+    .collapsed {
+      width: 55px !important;
+      height: 55px !important;
+      border-radius: 2px !important;
+      margin: 0px 40px 40px!important;
+    }
+
+    .heading{
+      background-color: #CCD1E4; 
+      padding: 170px 0px 100px
+    }
+    .heading .section h1{
+      font-size: 50px; 
+    }
+    .heading .section .button-48{
+      margin-top: 60px; 
+      margin-left: 0px;
+    }
+    .section .portfolio{
+      margin: 160px 0px 130px;
+    }
+    .section .portfolio #space{
+      padding: 10px 0px;
+    }
+  
+    .voilet-page{
+      background-color: #2F3A8F; 
+      margin-top: 60px;
+      margin-bottom: 0px;
+    }
+    .voilet-page .section{
+      padding: 150px 80px 100px;
+    }
+    .voilet-page .section h3{
+      color: #fff; 
+      padding-right: 0px; 
+      font-weight: 700;
+      font-size: 20px;
+      padding-bottom: 50px;
+      font-size: 25px;
+    }
+    .voilet-page .section h5{
+      color: #fff; 
+      font-weight: 700;
+      padding-bottom: 50px;
+    }
+  
+    .section #contact{
+      padding: 160px 20px 0px; 
+    }
+    #contact-bg{
+      padding: 50px 80px; 
+      border: 10px solid #FEECE9; 
+      background-color: #fff;
+    }
+    #what-they-say .testimony{
+      padding: 80px 0px 150px 0px; 
+      text-align: justify;
+    }
+    #what-they-say .testimony .head p{
+      color: #f56f5e; 
+      font-size:13px; 
+      padding: 70px 0px 10px;
+    }
+    #what-they-say .testimony #message p{
+      line-height: 2; 
+      font-size: 16px;
+    }
+    #what-they-say .testimony h2{
+      padding: 0px 0px 40px
+    }
+  
+    .site-footer{
+    background-color:#2F3A8F;
+    padding: 130px 0 100px;
+    font-size:15px;
+    line-height:24px;
+    color:#fff;
+    margin-top: -30px;
+  }
+  }
+  @media screen and (max-width: 800px){
+    #navbar .container .menu-button{
+      margin-left: 20px;
+    }
+    #navbar .container #navbar-right .phone{
+      display: block;
+    }
+    .menu-overlay .nav{
+      padding: 0px 10px; 
+    }
+    .menu-overlay .nav #overlay-list{
+      margin-top: 150px;
+    }
+    .menu-overlay .nav #overlay-list .nav__items p{
+      margin-top: -0px;
+    }
+    .menu-overlay .nav #overlay-list .nav__items #link{
+      display: block;
+    }
+  
+    .section{
+      margin: 0px 40px;
+    }
+    .collapsed {
+      width: 55px !important;
+      height: 55px !important;
+      border-radius: 2px !important;
+      margin: 0px 40px 40px!important;
+    }
+
+    .heading{
+      background-color: #CCD1E4; 
+      padding: 170px 0px 100px
+    }
+    .heading .section h1{
+      font-size: 45px; 
+    }
+    .heading .section .button-48{
+      margin-top: 60px; 
+      margin-left: 0px;
+    }
+    .section .portfolio{
+      margin: 160px 20px 130px;
+    }
+    .section .portfolio #space{
+      padding: 10px 0px;
+    }
+  
+    .voilet-page{
+      background-color: #2F3A8F; 
+      margin-top: 60px;
+      margin-bottom: 0px;
+    }
+    .voilet-page .section{
+      padding: 150px 20px 100px;
+    }
+    .voilet-page .section h3{
+      color: #fff; 
+      padding-right: 0px; 
+      font-weight: 700;
+      font-size: 25px;
+      padding-bottom: 50px;
+    }
+    .voilet-page .section h5{
+      color: #fff; 
+      font-weight: 700;
+      padding-bottom: 50px;
+    }
+  
+    .section #contact{
+      padding: 160px 20px 0px; 
+    }
+    #contact-bg{
+      padding: 50px 80px; 
+      border: 10px solid #FEECE9; 
+      background-color: #fff;
+    }
+    #what-they-say .testimony{
+      padding: 80px 0px 150px 0px; 
+      text-align: justify;
+    }
+    #what-they-say .testimony .head p{
+      color: #f56f5e; 
+      font-size:13px; 
+      padding: 70px 0px 10px;
+    }
+    #what-they-say .testimony #message p{
+      line-height: 2; 
+      font-size: 16px;
+    }
+    #what-they-say .testimony h2{
+      padding: 0px 0px 40px
+    }
+  
+    .site-footer{
+    background-color:#2F3A8F;
+    padding: 130px 0 100px;
+    font-size:15px;
+    line-height:24px;
+    color:#fff;
+    margin-top: -30px;
+  }
+  }
+  @media screen and (max-width: 700px){
+    #navbar .container .menu-button{
+      margin-left: 20px;
+    }
+    #navbar .container #navbar-right .phone{
+      display: block;
+    }
+    .menu-overlay .nav{
+      padding: 0px 10px; 
+    }
+    .menu-overlay .nav #overlay-list{
+      margin-top: 150px;
+    }
+    .menu-overlay .nav #overlay-list .nav__items p{
+      margin-top: -0px;
+    }
+    .menu-overlay .nav #overlay-list .nav__items #link{
+      display: block;
+    }
+  
+    .section{
+      margin: 0px 40px;
+    }
+    .collapsed {
+      width: 55px !important;
+      height: 55px !important;
+      border-radius: 2px !important;
+      margin: 0px 40px 40px!important;
+    }
+
+    .heading{
+      background-color: #CCD1E4; 
+      padding: 170px 0px 100px
+    }
+    .heading .section h1{
+      font-size: 35px; 
+    }
+    .heading .section .button-48{
+      margin-top: 50px; 
+      margin-left: 0px;
+    }
+    .section .portfolio{
+      margin: 150px 0px 120px;
+    }
+    .section .portfolio #space{
+      padding: 10px 0px;
+    }
+  
+    .voilet-page{
+      background-color: #2F3A8F; 
+      margin-top: 60px;
+      margin-bottom: 0px;
+    }
+    .voilet-page .section{
+      padding: 150px 0px 100px;
+    }
+    .voilet-page .section h3{
+      color: #fff; 
+      padding-right: 0px; 
+      font-weight: 700;
+      font-size: 20px;
+      padding-bottom: 50px;
+    }
+    .voilet-page .section h5{
+      color: #fff; 
+      font-weight: 700;
+      padding-bottom: 50px;
+    }
+  
+    .section #contact{
+      padding: 160px 20px 0px; 
+    }
+    #contact-bg{
+      padding: 50px 20px; 
+      border: 10px solid #FEECE9; 
+      background-color: #fff;
+    }
+    #what-they-say .testimony{
+      padding: 80px 0px 150px 0px; 
+      text-align: justify;
+    }
+    #what-they-say .testimony .head p{
+      color: #f56f5e; 
+      font-size:13px; 
+      padding: 70px 0px 10px;
+    }
+    #what-they-say .testimony #message p{
+      line-height: 2; 
+      font-size: 16px;
+    }
+    #what-they-say .testimony h2{
+      padding: 0px 0px 40px
+    }
+  
+    .site-footer{
+    background-color:#2F3A8F;
+    padding: 130px 0 100px;
+    font-size:15px;
+    line-height:24px;
+    color:#fff;
+    margin-top: -30px;
+  }
+  }
+  @media screen and (max-width: 600px){
+    #navbar .container .menu-button{
+      margin-left: 20px;
+    }
+    #navbar .container #navbar-right .phone{
+      display: block;
+    }
+    .menu-overlay .nav{
+      padding: 0px 10px; 
+    }
+    .menu-overlay .nav #overlay-list{
+      margin-top: 150px;
+    }
+    .menu-overlay .nav #overlay-list .nav__items p{
+      margin-top: -0px;
+    }
+    .menu-overlay .nav #overlay-list .nav__items #link{
+      display: block;
+    }
+  
+    .section{
+      margin: 0px 40px;
+    }
+    .collapsed {
+      width: 55px !important;
+      height: 55px !important;
+      border-radius: 2px !important;
+      margin: 0px 40px 40px!important;
+    }
+
+    .heading{
+      background-color: #CCD1E4; 
+      padding: 170px -40px 100px
+    }
+    .heading .section h1{
+      font-size: 35px; 
+    }
+    .heading .section .button-48{
+      margin-top: 107px; 
+      margin-left: 40px;
+    }
+    .section .portfolio{
+      margin: 160px -20px 130px;
+    }
+    .section .portfolio p{
+      color: #40514e; 
+      font-size:13px; 
+      margin: 40px 0px 0px 20px;  
+      border-bottom: 1px solid #D0D0D0; 
+      width: 25px;
+    }
+    .section .portfolio #space{
+      padding: 10px 20px;
+    }
+  
+    .voilet-page{
+      background-color: #2F3A8F; 
+      margin-top: 60px;
+      margin-bottom: 0px;
+    }
+    .voilet-page .section{
+      padding: 150px 0px 100px;
+    }
+    .voilet-page .section h3{
+      color: #fff; 
+      padding-right: 0px; 
+      font-weight: 700;
+      font-size: 20px;
+      padding-bottom: 50px;
+    }
+    .voilet-page .section h5{
+      color: #fff; 
+      font-weight: 700;
+      padding-bottom: 50px;
+    }
+  
+    .section #contact{
+      padding: 150px 20px 0px; 
+    }
+    #contact-bg{
+      padding: 50px 20px; 
+      border: 10px solid #FEECE9; 
+      background-color: #fff;
+    }
+    #what-they-say .testimony{
+      padding: 80px 0px 140px 0px; 
+      text-align: justify;
+    }
+    #what-they-say .testimony .head p{
+      color: #f56f5e; 
+      font-size:13px; 
+      padding: 70px 0px 10px;
+    }
+    #what-they-say .testimony #message p{
+      line-height: 2; 
+      font-size: 16px;
+    }
+    #what-they-say .testimony h2{
+      padding: 0px 0px 40px
+    }
+  
+    .site-footer{
+    background-color:#2F3A8F;
+    padding: 130px 0 100px;
+    font-size:15px;
+    line-height:24px;
+    color:#fff;
+    margin-top: -30px;
+  }
+  }
+  @media screen and (max-width: 500px){
+    #navbar .container .menu-button{
+      margin-left: 20px;
+    }
+    #navbar .container #navbar-right .phone{
+      display: none;
+    }
+    .menu-overlay .nav{
+      padding: 0px 10px; 
+    }
+    .menu-overlay .nav #overlay-list{
+      margin-top: 150px;
+    }
+    .menu-overlay .nav #overlay-list .nav__items p{
+      margin-top: -40px;
+    }
+    .menu-overlay .nav #overlay-list .nav__items #link{
+      display: none;
+    }
+  
+    .section{
+      margin: 0px 20px;
+    }
+    .collapsed {
+      width: 55px !important;
+      height: 55px !important;
+      border-radius: 2px !important;
+      margin: 0px 20px 40px!important;
+    }
+  
+
+    .heading{
+      background-color: #CCD1E4; 
+      padding: 170px -160px 100px
+    }
+    .heading .section h1{
+      font-size: 35px; 
+    }
+    .heading .section .button-48{
+      margin-top: 107px; 
+      margin-left: 0px;
+    }
+    .section .portfolio{
+      margin: 160px 0px 130px;
+    }
+    .section .portfolio p{
+      color: #40514e; 
+      font-size:13px; 
+      margin: 40px 0px 0px 0px;  
+      border-bottom: 1px solid #D0D0D0; 
+      width: 25px;
+    }
+    .section .portfolio #space{
+      padding: 10px 0px;
+    }
+  
+    .voilet-page{
+      background-color: #2F3A8F; 
+      margin-top: 60px;
+      margin-bottom: 0px;
+    }
+    .voilet-page .section{
+      padding: 150px 0px 100px;
+    }
+    .voilet-page .section h3{
+      color: #fff; 
+      padding-right: 0px; 
+      font-weight: 700;
+      font-size: 20px;
+      padding-bottom: 50px;
+    }
+    .voilet-page .section h5{
+      color: #fff; 
+      font-weight: 700;
+      padding-bottom: 50px;
+    }
+  
+    .section #contact{
+      padding: 150px 10px 0px; 
+    }
+    #contact-bg{
+      padding: 50px 20px; 
+      border: 10px solid #FEECE9; 
+      background-color: #fff;
+    }
+    #what-they-say .testimony{
+      padding: 80px 0px 140px 0px; 
+      text-align: justify;
+    }
+    #what-they-say .testimony .head p{
+      color: #f56f5e; 
+      font-size:13px; 
+      padding: 70px 0px 10px;
+    }
+    #what-they-say .testimony #message p{
+      line-height: 2; 
+      font-size: 16px;
+    }
+    #what-they-say .testimony h2{
+      padding: 0px 0px 40px
+    }
+  
+    .site-footer{
+    background-color:#2F3A8F;
+    padding: 130px 10px 100px;
+    font-size:15px;
+    line-height:24px;
+    color:#fff;
+    margin-top: -30px;
+  }
+  }
+  @media screen and (max-width: 400px){
+    #navbar .container .menu-button{
+      margin-left: 20px;
+    }
+    #navbar .container #navbar-right .phone{
+      display: none;
+    }
+    .menu-overlay .nav{
+      padding: 0px 10px; 
+    }
+    .menu-overlay .nav #overlay-list{
+      margin-top: 150px;
+    }
+    .menu-overlay .nav #overlay-list .nav__items p{
+      margin-top: -40px;
+    }
+    .menu-overlay .nav #overlay-list .nav__items #link{
+      display: none;
+    }
+  
+    .section{
+      margin: 0px 20px;
+    }
+    .collapsed {
+      width: 55px !important;
+      height: 55px !important;
+      border-radius: 2px !important;
+      margin: 0px 20px 40px!important;
+    }
+
+    .heading{
+      background-color: #CCD1E4; 
+      padding: 170px -160px 100px
+    }
+    .heading .section h1{
+      font-size: 35px; 
+    }
+    .heading .section .button-48{
+      margin-top: 107px; 
+      margin-left: 0px;
+    }
+    .section .portfolio{
+      margin: 160px 0px 130px;
+    }
+    .section .portfolio #space{
+      padding: 10px 0px;
+    }
+    .section .portfolio p{
+      color: #40514e; 
+      font-size:13px; 
+      margin: 40px 0px 0px 0px;  
+      border-bottom: 1px solid #D0D0D0; 
+      width: 25px;
+    }
+  
+    .voilet-page{
+      background-color: #2F3A8F; 
+      margin-top: 60px;
+      margin-bottom: 0px;
+    }
+    .voilet-page .section{
+      padding: 150px 0px 100px;
+    }
+    .voilet-page .section h3{
+      color: #fff; 
+      padding-right: 0px; 
+      font-weight: 700;
+      font-size: 20px;
+      padding-bottom: 50px;
+    }
+    .voilet-page .section h5{
+      color: #fff; 
+      font-weight: 700;
+      padding-bottom: 50px;
+    }
+  
+    .section #contact{
+      padding: 150px 10px 0px; 
+    }
+    #contact-bg{
+      padding: 50px 20px; 
+      border: 10px solid #FEECE9; 
+      background-color: #fff;
+    }
+    #what-they-say .testimony{
+      padding: 80px 0px 150px 0px; 
+      text-align: justify;
+    }
+    #what-they-say .testimony .head p{
+      color: #f56f5e; 
+      font-size:13px; 
+      padding: 70px 0px 10px;
+    }
+    #what-they-say .testimony #message p{
+      line-height: 2; 
+      font-size: 16px;
+    }
+    #what-they-say .testimony h2{
+      padding: 0px 0px 40px
+    }
+  
+    .site-footer{
+    background-color:#2F3A8F;
+    padding: 130px 10px 100px;
+    font-size:15px;
+    line-height:24px;
+    color:#fff;
+    margin-top: -30px;
+  }
+  }
+  @media screen and (max-width: 321px){
+    #navbar .container .menu-button{
+      margin-left: 20px;
+    }
+    #navbar .container #navbar-right .phone{
+      display: none;
+    }
+    .menu-overlay .nav{
+      padding: 0px 10px; 
+    }
+    .menu-overlay .nav #overlay-list{
+      margin-top: 150px;
+    }
+    .menu-overlay .nav #overlay-list .nav__items p{
+      margin-top: -40px;
+    }
+    .menu-overlay .nav #overlay-list .nav__items #link{
+      display: none;
+    }
+  
+    .section{
+      margin: 0px 20px;
+    }
+    .collapsed {
+      width: 55px !important;
+      height: 55px !important;
+      border-radius: 2px !important;
+      margin: 0px 20px 40px!important;
+    }
+
+    .heading{
+      background-color: #CCD1E4; 
+      padding: 130px -160px 60px
+    }
+    .heading .section h1{
+      font-size: 35px; 
+    }
+    .heading .section .button-48{
+      margin-top: 107px; 
+      margin-left: 0px;
+    }
+    .section .portfolio{
+      margin: 160px 0px 130px;
+    }
+    .section .portfolio p{
+      color: #40514e; 
+      font-size:13px; 
+      margin: 40px 0px 0px 0px;  
+      border-bottom: 1px solid #D0D0D0; 
+      width: 25px;
+    }
+    .section .portfolio #space{
+      padding: 10px 0px;
+    }
+  
+    .voilet-page{
+      background-color: #2F3A8F; 
+      margin-top: 60px;
+      margin-bottom: 0px;
+    }
+    .voilet-page .section{
+      padding: 150px 0px 100px;
+    }
+    .voilet-page .section h3{
+      color: #fff; 
+      padding-right: 0px; 
+      font-weight: 700;
+      font-size: 20px;
+      padding-bottom: 50px;
+    }
+    .voilet-page .section h5{
+      color: #fff; 
+      font-weight: 700;
+      padding-bottom: 50px;
+    }
+  
+    .section #contact{
+      padding: 150px 10px 0px; 
+    }
+    #contact-bg{
+      padding: 50px 20px; 
+      border: 10px solid #FEECE9; 
+      background-color: #fff;
+    }
+    #what-they-say .testimony{
+      padding: 80px 0px 150px 0px; 
+      text-align: justify;
+    }
+    #what-they-say .testimony .head p{
+      color: #f56f5e; 
+      font-size:13px; 
+      padding: 70px 0px 10px;
+    }
+    #what-they-say .testimony #message p{
+      line-height: 2; 
+      font-size: 16px;
+    }
+    #what-they-say .testimony h2{
+      padding: 0px 0px 40px
+    }
+  
+    .site-footer{
+    background-color:#2F3A8F;
+    padding: 130px 10px 100px;
+    font-size:15px;
+    line-height:24px;
+    color:#fff;
+    margin-top: -30px;
+  }
+  }
+
+
+
+
+
+
+
+ 
+
+
